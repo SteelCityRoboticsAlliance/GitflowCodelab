@@ -8,6 +8,8 @@ package com.scra.codelabs.gitflow;
 import com.scra.codelabs.gitflow.commands.PJExampleCommand;
 import com.scra.codelabs.gitflow.commands.TeleopDriveCommand;
 import com.scra.codelabs.gitflow.subsystems.ChassisSubsystem;
+import com.scra.codelabs.gitflow.subsystems.SubsystemOne;
+
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -29,6 +31,7 @@ public class RobotContainer {
     private static final String DRIVETRAIN_NAME = "m_drivetrain";
 
     private PJExampleCommand m_pjExample;
+    private final SubsystemOne m_sSubsystemOne;
 
     ///////////////////////////////////////
     // Don't touch things below here
@@ -41,6 +44,7 @@ public class RobotContainer {
      */
     public RobotContainer() {
         m_drivetrain = new ChassisSubsystem();
+        m_sSubsystemOne = new SubsystemOne();
 
         Field[] fields = RobotContainer.class.getDeclaredFields();
 
